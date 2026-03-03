@@ -6,15 +6,15 @@ export async function POST(req) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "erzahidkhan101@gmail.com", // your Gmail
-      pass: "knuqvmcozgzrbttz", // your app password
+     user: process.env.EMAIL_USER,
+     pass: process.env.EMAIL_PASS,
     },
   });
 
   try {
     await transporter.sendMail({
-      from: `"Website Quote Request" <erzahidkhan101@gmail.com>`,
-      to: "syedeeshanqadri@gmail.com", // your inbox
+      from: `"Website Contact" <${process.env.EMAIL_USER}>`, // must match auth
+      to: "qadri.eeshan@gmail.com", // your inbox
       replyTo: email,
       subject: `New Quote Request from ${name}`,
       html: `
