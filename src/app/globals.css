@@ -1,0 +1,76 @@
+/* @import "tailwindcss"; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+  subsets: "latin";
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
+  touch-action: pan-y;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.outlined-text {
+  color: transparent;
+  -webkit-text-stroke: 1px #d6d6d680;
+  text-stroke: 0.5px white;
+  font-weight: 800;
+}
+
+/* privacy scroll */
+/* custom-scroll class for slim scrollbar styling */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #10b981; /* Tailwind green-500 */
+  border-radius: 8px;
+}
+
+/* appointment freeze */
+
+.scroll-lock {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* Announcement Banner Gradient Animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
